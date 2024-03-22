@@ -99,7 +99,6 @@ while True:
         # - "roomId" is is ID of the selected room
         # - "text": is the responseMessage assembled above
         postData = {"roomId": roomIdToGetMessages, "text": "Hello, this is a test message from polawich"}
-        postData = {"roomId": roomIdToGetMessages, "text": "Hello, this is a test message from polawich"}
 
         # Post the call to the Webex Teams message API.
         r = requests.post( "https://webexapis.com/v1/messages", 
