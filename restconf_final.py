@@ -77,14 +77,10 @@ def disable():
 
 
 def status():
-    api_url_status = "<!!!REPLACEME with URL of RESTCONF Operational API!!!>"
+    api_url_status = "https://10.0.15.189/restconf/data/Cisco-IOS-XE-native:native/restconf"
 
-    resp = requests.<!!!REPLACEME with the proper HTTP Method!!!>(
-        <!!!REPLACEME with URL!!!>, 
-        auth=basicauth, 
-        headers=<!!!REPLACEME with HTTP Header!!!>, 
-        verify=False
-        )
+    resp = requests.put(api_url, data=json.dumps(yangConfig), auth=basicauth, headers=headers, verify=False)
+
 
     if(resp.status_code >= 200 and resp.status_code <= 299):
         print("STATUS OK: {}".format(resp.status_code))
